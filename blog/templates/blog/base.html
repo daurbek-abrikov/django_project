@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
 
     {% if title %}
-    <title> {{ title }} page </title>
+    <title> {{ title }} </title>
     {% else %}
     <title> Home page </title>
     {% endif %}
@@ -34,7 +34,7 @@
                 <div class="navbar-nav">
                     {% if user.is_authenticated %}
                         <a class="nav-item nav-link" href="{% url 'post-create' %}">New Post</a>
-                        <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>  
+                        <a class="nav-item nav-link" href="{% url 'user-posts' user.username %}">Profile</a>  
                         <a class="nav-item nav-link" href="{% url 'logout' %}">Log Out</a>    
                     {% else %}
                         <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
