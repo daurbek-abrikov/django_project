@@ -26,7 +26,7 @@ def profile(request):
             u_form.save()
             p_form.save()
             messages.success(request, f'Changes are saved {request.user.username}!')
-            return redirect('profile')
+            return redirect('user-posts')
     else:
         u_form = UserUpdateForm(instance=request.user)
         p_form = ProfileUpdateForm(instance=request.user.profile)
